@@ -1,4 +1,4 @@
 export * from "./Navbar";
-export * from "./WeatherImages";
+export * from "./WeatherImage";
 export * from "./WeatherLocation";
-export * from "./WeatherTemperatura";
+export * from "./WeatherTemp";

@@ -40,32 +40,6 @@ export const SearchIcon = styled.button`
   border-radius: 50%;
 `;
 
-//? weatherIMAGEN--------------
-
-export const WeatherImage = styled.div`
-  margin-top: 29px;
-  display: flex;
-  justify-content: center;
-`;
-
-export const WeatherTemp = styled.div`
-  display: flex;
-  justify-content: center;
-  color: white;
-  font-size: 120px;
-  font-weight: 400;
-`;
-
-export const WeatherLocation = styled.div`
-  display: flex;
-  justify-content: center;
-  color: white;
-  font-size: 60px;
-  font-weight: 400;
-`;
-
-//? weatherIMAGEN--------------
-
 export const WeatherData = styled.div`
   margin-top: 50px;
   color: white;

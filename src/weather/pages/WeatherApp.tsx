@@ -9,14 +9,15 @@ import { useForm } from "../../hooks/useForm";
 import { WeatherInfo } from "./WeatherInfo";
 import {
   Navbar,
-  WeatherImages,
+  WeatherImage,
   WeatherLocations,
-  WeatherTemperatura,
+  WeatherTemp,
 } from "../components";
 
 export const WeatherApp = () => {
   const { formState, onChangeInput } = useForm({});
   const { cityInput } = formState;
+  console.log("APP");
 
   const [weatherMain, setWeatherMain] = useState("");
   const [temp, setTemp] = useState<number>(0);
@@ -59,8 +60,8 @@ export const WeatherApp = () => {
     <Box padding={1}>
       <Wrapper>
         <Navbar handleSubmit={handleSubmit} onChangeInput={onChangeInput} />
-        <WeatherImages main={weatherMain} />
-        <WeatherTemperatura temp={temp} />
+        <WeatherImage main={weatherMain} />
+        <WeatherTemp temp={temp} />
         <WeatherLocations name={location} />
         <WeatherInfo wind={wind} humidity={humidity} />
       </Wrapper>

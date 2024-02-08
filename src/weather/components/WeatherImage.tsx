@@ -1,16 +1,16 @@
-import { WeatherImage } from "../../customStyle/customStyled";
 //* Images----
 import cloud_icon from "/assets/cloud.png";
 import clear_icon from "/assets/clear.png";
 import drizzle_icon from "/assets/drizzle.png";
 import rain_icon from "/assets/rain.png";
 import snow_icon from "/assets/snow.png";
-//* Images----
+import { Box } from "@mui/material";
+
 type propTypes = {
   main: string;
 };
 
-export const WeatherImages = (props: propTypes) => {
+export const WeatherImage = (props: propTypes) => {
   const { main } = props;
 
   const imagesWeather = (main: string) => {
@@ -22,8 +22,8 @@ export const WeatherImages = (props: propTypes) => {
     return cloud_icon;
   };
   return (
-    <WeatherImage>
+    <Box display={"flex"} justifyContent={"center"} marginTop={"29px"}>
       <img src={imagesWeather(main)} alt="icon-weather" />
-    </WeatherImage>
+    </Box>
   );
 };

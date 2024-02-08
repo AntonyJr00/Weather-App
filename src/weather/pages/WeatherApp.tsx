@@ -17,13 +17,15 @@ import {
 export const WeatherApp = () => {
   const { formState, onChangeInput } = useForm({});
   const { cityInput } = formState;
-  console.log("APP");
 
-  const [weatherMain, setWeatherMain] = useState("");
-  const [temp, setTemp] = useState<number>(0);
-  const [location, setLocation] = useState<string>("");
-  const [wind, setWind] = useState({ speed: 0 });
-  const [humidity, setHumidity] = useState(0);
+  const [color, setColor] = useState(false);
+  const [mainState, setMainState] = useState({});
+  const [weatherState, setWeatherState] = useState({});
+  const [windState, setWindState] = useState({ speed: 0 });
+  const [nameState, setNameState] = useState("");
+
+  const colorSky = (color: string) =>
+    /[nN]/.test(color) ? setColor(true) : setColor(false);
 
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
@@ -34,36 +36,42 @@ export const WeatherApp = () => {
         },
       });
       const { data } = resp;
-      setWeatherMain(data.weather[0].main);
-      setTemp(data.main.temp);
-      setLocation(data.name);
-      setWind(data.wind);
-      setHumidity(data.main.humidity);
+      const { main, name, weather, wind } = await data;
+
+      colorSky(weather[0].icon);
+
+      setMainState(main);
+      setWeatherState(weather[0]);
+      setWindState(wind);
+      setNameState(name);
       console.log("ok");
+      console.log(data);
     } catch (error) {
       console.log(error);
     }
   };
 
+  console.log("APP");
   useEffect(() => {
     weatherApi.get("/weather", { params: { q: "Lima" } }).then((resp) => {
       const { data } = resp;
-      setWeatherMain(data.weather[0].main);
-      setTemp(data.main.temp);
-      setLocation(data.name);
-      setWind(data.wind);
-      setHumidity(data.main.humidity);
+      const { main, name, weather, wind } = data;
+
+      setMainState(main);
+      setWeatherState(weather[0]);
+      setWindState(wind);
+      setNameState(name);
     });
   }, []);
 
   return (
     <Box padding={1}>
-      <Wrapper>
+      <Wrapper $color={color}>
         <Navbar handleSubmit={handleSubmit} onChangeInput={onChangeInput} />
-        <WeatherImage main={weatherMain} />
-        <WeatherTemp temp={temp} />
-        <WeatherLocations name={location} />
-        <WeatherInfo wind={wind} humidity={humidity} />
+        <WeatherImage weather={weatherState} />
+        <WeatherLocations name={nameState} />
+        <WeatherTemp main={mainState} />
+        <WeatherInfo wind={windState} main={mainState} />
       </Wrapper>
     </Box>
   );

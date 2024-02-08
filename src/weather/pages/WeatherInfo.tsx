@@ -13,17 +13,19 @@ type propType = {
   wind: {
     speed: number;
   };
-  humidity: number;
+  main: {
+    humidity?: number;
+  };
 };
 
 export const WeatherInfo = (props: propType) => {
-  const { wind, humidity } = props;
+  const { wind, main } = props;
   return (
     <WeatherData>
       <ElementData>
         <IconData src={humidity_icon} alt="humidity-icon" />
         <Data>
-          <div>{humidity}%</div>
+          <div>{main.humidity}%</div>
           <DataText>Humidity</DataText>
         </Data>
       </ElementData>

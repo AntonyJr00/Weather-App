@@ -1,19 +1,22 @@
 import styled from "styled-components";
 
-export const Wrapper = styled.div`
+export const Wrapper = styled.div<{ $color: boolean }>`
   width: 607px;
-  height: 800px;
+  min-height: 800px;
   margin: auto;
-  margin-top: 25px;
+  padding: 22px;
   border-radius: 12px;
-  background-image: linear-gradient(180deg, #130754, #3d2f80);
+  background-image: ${(props) =>
+    props.$color
+      ? "linear-gradient(180deg, #130754, #3d2f80)"
+      : "linear-gradient(180deg, #0070F5, #B3EAF5)"};
 `;
 
 export const TopBar = styled.form`
   display: flex;
   justify-content: center;
   gap: 14px;
-  padding-top: 60px;
+  padding-top: 30px;
 `;
 
 export const Input = styled.input`
@@ -41,7 +44,7 @@ export const SearchIcon = styled.button`
 `;
 
 export const WeatherData = styled.div`
-  margin-top: 50px;
+  margin-top: 30px;
   color: white;
   display: flex;
   justify-content: center;

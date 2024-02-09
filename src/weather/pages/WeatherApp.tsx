@@ -19,6 +19,7 @@ export const WeatherApp = () => {
   const { cityInput } = formState;
 
   const [color, setColor] = useState(false);
+  const [country, setCountry] = useState("");
   const [mainState, setMainState] = useState({});
   const [weatherState, setWeatherState] = useState({});
   const [windState, setWindState] = useState({ speed: 0 });
@@ -36,10 +37,11 @@ export const WeatherApp = () => {
         },
       });
       const { data } = resp;
-      const { main, name, weather, wind } = await data;
+      const { main, name, weather, wind, sys } = await data;
 
       colorSky(weather[0].icon);
 
+      setCountry(sys.country);
       setMainState(main);
       setWeatherState(weather[0]);
       setWindState(wind);
@@ -51,7 +53,6 @@ export const WeatherApp = () => {
     }
   };
 
-  console.log("APP");
   useEffect(() => {
     weatherApi.get("/weather", { params: { q: "Lima" } }).then((resp) => {
       const { data } = resp;
@@ -64,12 +65,14 @@ export const WeatherApp = () => {
     });
   }, []);
 
+  // console.log(country);
+
   return (
     <Box padding={1}>
       <Wrapper $color={color}>
         <Navbar handleSubmit={handleSubmit} onChangeInput={onChangeInput} />
         <WeatherImage weather={weatherState} />
-        <WeatherLocations name={nameState} />
+        <WeatherLocations name={nameState} country={country} />
         <WeatherTemp main={mainState} />
         <WeatherInfo wind={windState} main={mainState} />
       </Wrapper>

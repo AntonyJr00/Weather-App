@@ -261,5 +261,3 @@ export const getCountry = (iso: string) => {
   }
   return "None";
 };
-
-console.log(getCountry("GB"));

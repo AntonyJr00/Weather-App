@@ -47,7 +47,6 @@ export const WeatherApp = () => {
       setWindState(wind);
       setNameState(name);
       console.log("ok");
-      console.log(data);
     } catch (error) {
       console.log(error);
     }
@@ -66,8 +65,6 @@ export const WeatherApp = () => {
       setCountry(sys.country);
     });
   }, []);
-
-  // console.log(country);
 
   return (
     <Box padding={1}>

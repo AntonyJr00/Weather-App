@@ -1,5 +1,6 @@
 import { Box, Typography } from "@mui/material";
 import { getCountry } from "../../helper/getCountriesForISO";
+import { cyan } from "@mui/material/colors";
 type propType = {
   name: string;
   country: string;
@@ -39,9 +40,12 @@ export const WeatherLocations = (props: propType) => {
         </Typography>
         <Typography
           color={"white"}
-          fontSize={"16px"}
+          paddingX={2}
+          borderRadius={3}
+          fontSize={"18px"}
           fontWeight={300}
           fontFamily={"Oswald"}
+          bgcolor={cyan[200]}
         >
           {isoName}
         </Typography>

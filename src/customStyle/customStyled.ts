@@ -23,7 +23,7 @@ export const Wrapper = styled.div<{ $color: boolean }>`
     left: 0;
     bottom: 0;
     z-index: -1;
-    opacity: 0.4;
+    opacity: 0.3;
 
     background-image: ${(props) =>
       props.$color ? "url('assets/furina2.jpg')" : "url('assets/furina.jpg')"};

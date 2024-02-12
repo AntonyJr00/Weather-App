@@ -56,12 +56,14 @@ export const WeatherApp = () => {
   useEffect(() => {
     weatherApi.get("/weather", { params: { q: "Lima" } }).then((resp) => {
       const { data } = resp;
-      const { main, name, weather, wind } = data;
+      const { main, name, weather, wind, sys } = data;
 
       setMainState(main);
       setWeatherState(weather[0]);
       setWindState(wind);
       setNameState(name);
+      colorSky(weather[0].icon);
+      setCountry(sys.country);
     });
   }, []);
 

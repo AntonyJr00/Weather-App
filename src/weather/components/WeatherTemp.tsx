@@ -17,10 +17,20 @@ export const WeatherTemp = (props: propType) => {
       justifyContent={"center"}
       paddingBottom={2}
     >
-      <Typography color={"white"} fontSize={"112px"} fontWeight={400}>
+      <Typography
+        color={"white"}
+        fontSize={"112px"}
+        fontWeight={400}
+        fontFamily={"Oswald"}
+      >
         {Math.trunc(main.temp || 0)}°c
       </Typography>
-      <Typography color={"white"} fontSize={18} fontWeight={400}>
+      <Typography
+        color={"white"}
+        fontSize={18}
+        fontWeight={400}
+        fontFamily={"Oswald"}
+      >
         {Math.trunc(main.temp_max || 0)}° / {Math.trunc(main.temp_min || 0)}°
       </Typography>
     </Box>

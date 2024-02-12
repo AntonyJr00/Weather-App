@@ -53,7 +53,12 @@ export const WeatherImage = (props: propTypes) => {
       alignItems={"center"}
       marginTop={"29px"}
     >
-      <Typography color={"white"} fontSize={16} fontWeight={400}>
+      <Typography
+        color={"white"}
+        fontSize={16}
+        fontWeight={400}
+        fontFamily={"Oswald"}
+      >
         {description?.toUpperCase()}
       </Typography>
       <img

@@ -67,7 +67,7 @@ export const WeatherApp = () => {
   }, []);
 
   return (
-    <Box padding={1}>
+    <Box>
       <Wrapper $color={color}>
         <Navbar handleSubmit={handleSubmit} onChangeInput={onChangeInput} />
         <WeatherImage weather={weatherState} />

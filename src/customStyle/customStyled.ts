@@ -2,11 +2,12 @@ import styled from "styled-components";
 
 export const Wrapper = styled.div<{ $color: boolean }>`
   position: relative;
-  width: 607px;
-  min-height: 800px;
+  /* width: 607px; */
+  width: 100vw;
+  height: 100vh;
   margin: auto;
   padding: 30px;
-  border-radius: 12px;
+  /* border-radius: 12px; */
   background-image: ${(props) =>
     props.$color
       ? "linear-gradient(180deg, #130754, #3d2f80)"
@@ -27,7 +28,7 @@ export const Wrapper = styled.div<{ $color: boolean }>`
 
     background-image: ${(props) =>
       props.$color ? "url('assets/furina2.jpg')" : "url('assets/furina.jpg')"};
-    background-position-x: right;
+    background-position-x: center;
     background-position-y: center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -43,7 +44,7 @@ export const TopBar = styled.form`
 
 export const Input = styled.input`
   display: flex;
-  width: 362px;
+  width: 80%;
   height: 78px;
   background-color: #ebfffc;
   color: #626262;
@@ -96,4 +97,5 @@ export const DataText = styled.div`
 
 export const IconData = styled.img`
   margin-top: 10px;
+  color: white;
 `;

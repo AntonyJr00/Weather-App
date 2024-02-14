@@ -51,7 +51,6 @@ export const WeatherImage = (props: propTypes) => {
       flexDirection={"column"}
       justifyContent={"center"}
       alignItems={"center"}
-      marginTop={"29px"}
     >
       <Typography
         color={"white"}
@@ -62,7 +61,8 @@ export const WeatherImage = (props: propTypes) => {
         {description?.toUpperCase()}
       </Typography>
       <img
-        style={{ width: "224px", height: "224px", padding: "24px" }}
+        loading="lazy"
+        style={{ width: "224px", height: "224px", paddingTop: "20px" }}
         src={imagesWeather()}
         alt="icon-weather"
       />

@@ -15,11 +15,10 @@ export const WeatherTemp = (props: propType) => {
       flexDirection={"column"}
       alignItems={"center"}
       justifyContent={"center"}
-      paddingBottom={2}
     >
       <Typography
         color={"white"}
-        fontSize={"112px"}
+        fontSize={"92px"}
         fontWeight={400}
         fontFamily={"Oswald"}
       >
@@ -27,7 +26,7 @@ export const WeatherTemp = (props: propType) => {
       </Typography>
       <Typography
         color={"white"}
-        fontSize={18}
+        fontSize={16}
         fontWeight={400}
         fontFamily={"Oswald"}
       >

@@ -13,7 +13,7 @@ export const Navbar = (props: Props) => {
     <TopBar onSubmit={handleSubmit}>
       <Input name="cityInput" placeholder="search" onChange={onChangeInput} />
       <SearchIcon type="submit">
-        <img src={search_icon} alt="search-icon" />
+        <img loading="lazy" src={search_icon} alt="search-icon" />
       </SearchIcon>
     </TopBar>
   );

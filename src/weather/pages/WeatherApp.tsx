@@ -31,6 +31,8 @@ export const WeatherApp = () => {
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
     try {
+      console.log("SSSS");
+
       const resp = await weatherApi.get("/weather", {
         params: {
           q: cityInput,
@@ -53,6 +55,7 @@ export const WeatherApp = () => {
   };
 
   useEffect(() => {
+    console.log("UPdaTeEffect");
     weatherApi.get("/weather", { params: { q: "Lima" } }).then((resp) => {
       const { data } = resp;
       const { main, name, weather, wind, sys } = data;

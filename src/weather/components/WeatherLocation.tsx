@@ -18,7 +18,7 @@ export const WeatherLocations = (props: propType) => {
     >
       <Typography
         color={"white"}
-        fontSize={"64px"}
+        fontSize={"52px"}
         fontWeight={400}
         fontFamily={"Oswald"}
       >
@@ -32,7 +32,7 @@ export const WeatherLocations = (props: propType) => {
       >
         <Typography
           color={"#f1f1f1"}
-          fontSize={"18px"}
+          fontSize={"16px"}
           fontWeight={500}
           fontFamily={"Oswald"}
         >
@@ -42,7 +42,7 @@ export const WeatherLocations = (props: propType) => {
           color={"white"}
           paddingX={2}
           borderRadius={3}
-          fontSize={"18px"}
+          fontSize={"16px"}
           fontWeight={300}
           fontFamily={"Oswald"}
           bgcolor={cyan[200]}

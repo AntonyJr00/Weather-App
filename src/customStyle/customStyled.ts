@@ -1,13 +1,15 @@
 import styled from "styled-components";
 
 export const Wrapper = styled.div<{ $color: boolean }>`
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 1rem;
+
   position: relative;
-  /* width: 607px; */
   width: 100vw;
-  height: 100vh;
-  margin: auto;
-  padding: 30px;
-  /* border-radius: 12px; */
+  height: 100vb;
+  padding: 20px;
   background-image: ${(props) =>
     props.$color
       ? "linear-gradient(180deg, #130754, #3d2f80)"
@@ -38,21 +40,20 @@ export const Wrapper = styled.div<{ $color: boolean }>`
 export const TopBar = styled.form`
   display: flex;
   justify-content: center;
-  gap: 14px;
-  padding-top: 20px;
+  gap: 4px;
 `;
 
 export const Input = styled.input`
   display: flex;
   width: 80%;
-  height: 78px;
+  height: 60px;
   background-color: #ebfffc;
   color: #626262;
   border: none;
   outline: none;
   border-radius: 40px;
   padding-left: 40px;
-  font-size: 20px;
+  font-size: 18px;
   font-weight: 400;
   font-family: "Oswald", sans-serif;
 `;
@@ -61,8 +62,8 @@ export const SearchIcon = styled.button`
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 78px;
-  height: 78px;
+  width: 60px;
+  height: 60px;
   background-color: #ebfffc;
   border-radius: 50%;
   border: #ebfffc;
@@ -70,27 +71,25 @@ export const SearchIcon = styled.button`
 `;
 
 export const WeatherData = styled.div`
-  margin-top: 30px;
-  color: white;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
+  color: white;
 `;
 
 export const ElementData = styled.div`
-  margin: auto;
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 12px;
 `;
 export const Data = styled.div`
-  font-size: 34px;
+  font-size: 32px;
   font-weight: 400;
   font-family: "Oswald", sans-serif;
 `;
 
 export const DataText = styled.div`
-  font-size: 20px;
+  font-size: 16px;
   font-weight: 400;
   font-family: "Oswald", sans-serif;
 `;
@@ -98,4 +97,5 @@ export const DataText = styled.div`
 export const IconData = styled.img`
   margin-top: 10px;
   color: white;
+  fill: white;
 `;

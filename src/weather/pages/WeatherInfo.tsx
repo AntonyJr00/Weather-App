@@ -23,7 +23,7 @@ export const WeatherInfo = (props: propType) => {
   return (
     <WeatherData>
       <ElementData>
-        <IconData src={humidity_icon} alt="humidity-icon" />
+        <IconData loading="lazy" src={humidity_icon} alt="humidity-icon" />
         <Data>
           <div>{main.humidity}%</div>
           <DataText>Humidity</DataText>
@@ -31,7 +31,7 @@ export const WeatherInfo = (props: propType) => {
       </ElementData>
 
       <ElementData>
-        <IconData src={wind_icon} alt="wind-icon" />
+        <IconData loading="lazy" src={wind_icon} alt="wind-icon" />
         <Data>
           <div>{Math.trunc(wind.speed || 1)} km/h</div>
           <DataText>Wind Speed</DataText>

@@ -8,6 +8,7 @@ export const Wrapper = styled.div<{ $color: boolean }>`
 
   position: relative;
   width: 100vw;
+  max-width: 500px;
   height: 100vb;
   padding: 20px;
   background-image: ${(props) =>
